@@ -2,15 +2,16 @@ import React from 'react';
 
 import './App.css';
 import CalculatorButton from './CalculatorButton'
+import calculate from './Calculate';
 
 export default class App extends React.Component {
   state = {
-    total: 0,
-    func: null
+    total: '0',
+    nextBtn: null
   }
 
   onBtnClick = (btnType) => {
-    alert(btnType);
+    this.setState(calculate(this.state, btnType));
   }
 
   render() {
